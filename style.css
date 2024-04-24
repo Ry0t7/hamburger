@@ -1,0 +1,122 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+
+.header{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+}
+.logo{
+    color: #333;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+nav{
+    display: block;
+    position: fixed;
+    top: 0;
+    right: -300px;
+    bottom: 0;
+    width: 300px;
+    height: auto;
+    background: #fff;
+    overflow-x: hidden;
+    overflow-y: auto;
+    transition: all .5s;
+    z-index: 3;
+    opacity: 0;
+}
+.open nav{
+    right: 0;
+    opacity: 1;
+}
+.nav-inner{
+    padding: 25px;
+    margin-top: 150px;
+}
+.nav-lists{
+    list-style: none;
+}
+.nab-list{
+    position: relative;
+    border-bottom: 1px solid #fff;
+}
+.nav-btn{
+    display: block;
+    color: #333;
+    font-size: 14px;
+    padding: 1em;
+    transition: .2s;
+    border-bottom: 1px solid #333;
+}
+.nav-btn:hover{
+    opacity: .6;
+}
+.toggle-btn{
+    display: block;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    transition: all .5s;
+    cursor: pointer;
+    z-index: 3;
+}
+.toggle-border{
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background-color: #333;
+    border-radius: 4px;
+    transition: all .5s;
+}
+.toggle-border:nth-child(1){
+    top: 4px;
+}
+.toggle-border:nth-child(2){
+    top: 14px;
+}
+.open .toggle-border{
+    background-color: #333;
+}
+.open .toggle-border:nth-child(1){
+    transform: translateY(5px) rotate(-315deg);
+}
+.open .toggle-border:nth-child(2){
+    transform: translateY(-5px) rotate(315deg);
+}
+#mask{
+    display: none;
+    transition: all .5s;
+}
+.open #mask{
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: .8;
+    z-index: 2;
+    cursor: pointer;
+}
